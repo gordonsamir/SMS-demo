@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>DemoSMSsite</title>
+  <title>demoSite</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="myStyle.css">
@@ -20,36 +20,58 @@
       <p>
         <label>Customer ID</label>
         <br>
-        <input type="text" id="myText" value="Paste cust ID here" />
+        <input type="text" id="custId" value="Paste cust ID here" />
       </p>
 
       <p>
         <label>Agent ID </label>
         <br>
-        <input type="text" id="myText" value="Paste Agent ID here" />
+        <input type="text" id="agentId" value="Paste Agent ID here" />
       </p>
 
       <p>
       <div class="SMS-group">
         <label for="DemoSelect">SMS Demo select</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>Reminder SMS</option>
-          <option>Verifications Docs SMS</option>
-          <option>Loan take up SMS</option>
-          <option>Offer reminder SMS</option>
-          <option>Bank statement SMS</option>
+        <select class="form-control" id="smstype" onchange="choice1(this)">
+          <option value="0"> </option>
+          <option value="1">Reminder</option>
+          <option value="2">Verifications</option>
+          <option value="3">TakeUp</option>
+          <option value="4">OfferReminder</option>
+          <option value="5">SpousalConsent</option>
         </select>
       </div>
       </p>
 
       <p>
-        <input type="submit" value="Submit">
-      <form action="/action_page.php">
-        </p>
+        <button type="button" onclick=myFunction()>Submit</button>
+
+      </p>
 
     </div>
 
   </form>
+
+  <script>
+    function myFunction(select) {
+      alert(custId.value);
+      console.log(custId.value);
+
+      alert(agentId.value);
+      console.log(agentId.value);
+
+    }
+
+    function choice1(select) {
+      var x = (select.options[select.selectedIndex].text);
+      console.log(select.options[select.selectedIndex].text);
+    }
+  </script>
+
+
+
+
+
 </body>
 
 </html>
